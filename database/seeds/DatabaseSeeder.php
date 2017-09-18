@@ -28,14 +28,16 @@ class DatabaseSeeder extends Seeder
           'category_id' => '1',
           'title' => 'Test blokje',
           'description' => 'Dit is een test tekst in het test blokje',
-          'image' => 'test.jpg'
+          'image' => 'test.jpg',
+          'slug' => 'slug-text'
       ]);
 
       DB::table('pages')->insert([
           'category_id' => '1',
           'title' => 'Test blokje 2',
           'description' => 'Dit is een test tekst in het 2e test blokje',
-          'image' => 'test.jpg'
+          'image' => 'test.jpg',
+          'slug' => 'test-slug'
       ]);
     }
 }

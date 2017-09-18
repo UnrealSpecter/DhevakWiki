@@ -42,8 +42,8 @@
     @endforeach
   </div>
   </div>
-  <div class="col-md-6 offset-md-6 spacing-top">
-    <div class="text-center">
+  <div class="container">
+    <div class="row breede justify-content-center">
       {!! $pages->links() !!}
     </div>
   </div>

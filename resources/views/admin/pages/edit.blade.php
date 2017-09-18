@@ -7,7 +7,8 @@
 @endsection
 
 @section('style')
-<link rel="stylesheet" href="{{ asset('css/admin/adminEdit.css') }}">
+ <link rel="stylesheet" href="{{ asset('css/admin/adminEdit.css') }}">
+ <link rel="stylesheet" href="{{ asset('css/effectButtons/bubble.css') }}">
 @endsection
 
 @section('content')
@@ -42,4 +43,11 @@
      </div>
    </div>
  </div>
+
+ <script src='http://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/plugins/CSSPlugin.min.js'></script>
+ <script src='http://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/easing/EasePack.min.js'></script>
+ <script src='http://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenLite.min.js'></script>
+ <script src='http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TimelineLite.min.js'></script>
+ <script src="/js/bubble/index.js"></script>
+ 
 @endsection

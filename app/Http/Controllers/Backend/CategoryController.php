@@ -43,7 +43,7 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
       $this->validate($request, array(
-        'name' => 'required|max:255'
+        'name' => 'required|max:255|min:5'
       ));
       $category = Category::create($request->all());
       $category->save();

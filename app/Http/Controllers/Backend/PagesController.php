@@ -49,7 +49,8 @@ class PagesController extends Controller
      */
     public function store(Request $request)
     {
-      $page = Page::create($request->all());
+      $page = new Page;
+
       if ($request->hasFile('image')) {
         $this->validate($request, [
           'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
@@ -60,6 +61,22 @@ class PagesController extends Controller
       Image::make(Input::file('image'))->resize(1500, 800)->save($location);
       $page->image = $filename;
       }
+
+
+
+      $this->validate($request, [
+        'title' => 'required|max:225|min:5',
+        'slug' => 'required|alpha_dash|min:5|max:255|unique:pages,slug',
+        'description' => 'required|min:5',
+        'category_id' => 'required|integer'
+      ]);
+
+
+      $page->description = $request->input('description');
+      $page->category_id = $request->input('category_id');
+      $page->title = $request->input('title');
+      $page->slug = $request->input('slug');
+
       $page->save();
       return redirect('admin/pages');
     }
@@ -108,9 +125,19 @@ class PagesController extends Controller
       $filename  = $page->id . '.' . Input::file('image')->getClientOriginalExtension();
       $location = public_path('images/' . $filename);
       Image::make(Input::file('image'))->resize(1500, 800)->save($location);
+
+      $this->validate($request, [
+        'title' => 'required|max:225|min:5',
+        'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        'slug' => 'required|alpha_dash|min:5|max:255|unique:pages,slug',
+        'description' => 'required|min:5',
+        'category_id' => 'required|integer'
+      ]);
+
       $page->image = $filename;
       $page->description = $request->input('description');
       $page->category_id = $request->input('category_id');
+      $page->slug = $request->input('slug');
       $page->title = $request->input('title');
       $page->save($requestData);
       return redirect('admin/pages');

@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Page;
+use App\Category;
 
 class PagesController extends Controller
 {
@@ -13,9 +14,10 @@ class PagesController extends Controller
    return view('pages.welcome')->withPages($pages);
  }
 
- public function tutorial($id)
+ public function tutorial($slug)
   {
-    $pages = Page::find($id);
+    $pages = Page::where('slug', $slug)->first();
+    $categories = Category::all();
     return view('tutorial.single')->withPages($pages);
   }
 

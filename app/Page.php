@@ -25,7 +25,7 @@ class Page extends Model
      *
      * @var array
      */
-    protected $fillable = ['title', 'description', 'category_id', 'image', 'section_id'];
+    protected $fillable = ['title', 'description', 'category_id', 'image', 'section_id', 'slug'];
 
     /**
     * Get the category record associated with the post.

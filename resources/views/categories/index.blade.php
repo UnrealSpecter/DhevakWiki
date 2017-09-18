@@ -52,7 +52,7 @@
           {!! Form::open(['route' => 'category.store', 'method' => 'POST']) !!}
             <h2>nieuwe categorie</h2>
             {{ Form::label('name', 'Categorie:') }}
-            {{ Form::text('name', null, ['class' => 'form-control']) }}
+            {{ Form::text('name', null, ['class' => 'form-control', 'minlength' => '5']) }}
             {{ Form::submit('maak nieuwe categorie', ['class' => 'btn btn-primary btn-block margin-top']) }}
           {!! Form::close()!!}
         </div>

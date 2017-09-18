@@ -31,7 +31,7 @@
               !!}
               {!! Form::button('<i class="fa fa-trash-o" aria-hidden="true"></i> Verwijderen', array(
                 'type' => 'submit',
-                'class' => 'btn btn-danger btn-xs',
+                'class' => 'btn btn-danger btn-xs ',
                 'title' => 'Delete Post',
                 'onclick'=>'return confirm("Wilt u deze verwijderen?")'
                 ))
@@ -45,6 +45,10 @@
                     <tr>
                       <th> Title </th>
                       <td> {{ $page->title }} </td>
+                    </tr>
+                    <tr>
+                      <th> Slug </th>
+                      <td> <a href="{{ url($page->slug) }}">{{ url($page->slug) }}</a> </td>
                     </tr>
                     <tr>
                       <th> Thumbnail </th>

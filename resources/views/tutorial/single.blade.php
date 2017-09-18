@@ -12,4 +12,6 @@
 
 @section('content')
 
+<p>"{{ $pages->title }}"</p>
+
 @endsection

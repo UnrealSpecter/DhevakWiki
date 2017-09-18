@@ -14,10 +14,10 @@
 Route::get('/', 'Frontend\\PagesController@Index');
 Route::get('succes', 'Frontend\\PagesController@index')->middleware('auth');
 
-Route::get('tutorial/{id}','Frontend\\PagesController@tutorial');
+Route::get('tutorial/{slug}','Frontend\\PagesController@tutorial');
 
 Route::resource('category', 'Backend\\CategoryController', ['only' => ['index', 'destroy', 'store']]);
-Route::resource('admin/pages', 'Backend\\PagesController');
+Route::resource('admin/pages', 'Backend\\PagesController', ['exept' => ['index']]);
 Route::get('admin/pages', 'Frontend\\PagesController@admin')->middleware('auth');
 Route::resource('admin/pages/{id}/sections', 'Backend\\SectionsController');
 

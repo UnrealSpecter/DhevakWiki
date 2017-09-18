@@ -8,6 +8,7 @@
 
 @section('style')
  <link rel="stylesheet" href="{{ asset('css/admin/adminCreate.css') }}">
+ <link rel="stylesheet" href="{{ asset('css/effectButtons/bubble.css') }}">
 @endsection
 
 @section('content')
@@ -21,15 +22,7 @@
                        <br />
                        <br />
 
-                       @if ($errors->any())
-                         <ul class="alert alert-danger">
-                             @foreach ($errors->all() as $error)
-                                 <li>{{ $error }}</li>
-                             @endforeach
-                         </ul>
-                       @endif
-
-                       {!! Form::open(['url' => '/admin/pages', 'class' => 'form-horizontal', 'files' => true]) !!}
+                       {!! Form::open(['url' => '/admin/pages', 'class' => 'form-horizontal', 'files' => true, 'data-parsley-validate' => '']) !!}
 
                        @include ('partials._form')
 
@@ -41,4 +34,11 @@
        </div>
     </div>
  </div>
+
+<script src='http://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/plugins/CSSPlugin.min.js'></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/easing/EasePack.min.js'></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenLite.min.js'></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TimelineLite.min.js'></script>
+<script src="/js/bubble/index.js"></script>
+
 @endsection
