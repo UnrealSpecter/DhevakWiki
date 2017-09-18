@@ -33,7 +33,7 @@
           <img class="card-img-top img-responsive" width="100%" src="{{ asset('images/' . $page->image) }}" alt="Card image cap">
           <div class="card-block">
             <h4 class="card-title">{{ str_limit($page->title, 20) }}</h4>
-            <p class="card-text ">{{ str_limit($page->description, 200) }}</p>
+            <p class="card-text ">{{ str_limit($page->description, 40) }}</p>
             <p class="card-text"><small class="text-muted">{{ str_limit($page->category->name, 30) }}</small>
             <a href="{{ url('/admin/pages/' . $page->id . '/edit') }}" title="Edit Page" class="offset-md-11 editding"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></p>
           </div>

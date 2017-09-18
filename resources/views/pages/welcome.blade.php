@@ -11,12 +11,11 @@
 @endsection
 
 @section('content')
-  <h1 class="display-3 logo padding-top">Dhévak</h1>
-  <h3 class="title padding-top padding-bottom">Tutorials:</h3>
-  <div class="row col-md-12 justify-content-center spacing-top just">
+  <div class="container">
+  <div class="row breede justify-content-center">
     @foreach($pages as $page)
       <a href="{{ url('tutorial/' . $page->id) }}">
-        <div class="card col-md-3 offset-md-1 padding-remove margin-top">
+        <div class="card page padding-remove margin-top">
           <img class="card-img-top img-responsive" width="100%" src="{{ asset('images/' . $page->image) }}" alt="Card image cap">
           <div class="card-block">
             <h4 class="card-title">{{ str_limit($page->title, 20) }}</h4>
@@ -27,6 +26,7 @@
       </div>
     @endforeach
   </div>
+</div>
   <div class="col-md-6 offset-md-6 spacing-top">
     <div class="text-center">
       {!! $pages->links() !!}
