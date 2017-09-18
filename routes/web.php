@@ -14,7 +14,7 @@
 Route::get('/', 'Frontend\\PagesController@Index');
 Route::get('succes', 'Frontend\\PagesController@index')->middleware('auth');
 
-Route::resource('tutorial','Frontend\\PagesController');
+Route::get('tutorial/{id}','Frontend\\PagesController@tutorial');
 
 Route::resource('category', 'Backend\\CategoryController', ['only' => ['index', 'destroy', 'store']]);
 Route::resource('admin/pages', 'Backend\\PagesController');

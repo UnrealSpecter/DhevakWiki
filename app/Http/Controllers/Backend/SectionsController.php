@@ -22,7 +22,7 @@ class SectionsController extends Controller
 
     public function index()
     {
-
+      //
     }
 
     /**
@@ -48,11 +48,8 @@ class SectionsController extends Controller
       $this->validate($request, array(
         'name' => 'required|max:255'
       ));
-
       $section = Section::create($request->all());
-
       $section->save();
-
       return redirect()->back();
     }
 
@@ -103,7 +100,6 @@ class SectionsController extends Controller
     public function destroy($id)
     {
       Section::destroy($id);
-
       return redirect()->back();
     }
 }

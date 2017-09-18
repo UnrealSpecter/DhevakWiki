@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
 use App\Page;
 use Illuminate\Http\Request;
 use App\Category;
@@ -18,7 +17,7 @@ class PagesController extends Controller
 
   public function __construct()
   {
-      $this->middleware('auth');
+    $this->middleware('auth');
   }
     /**
      * Display a listing of the resource.
@@ -27,6 +26,7 @@ class PagesController extends Controller
      */
     public function index(Request $request)
     {
+      //
     }
 
     /**
@@ -36,8 +36,8 @@ class PagesController extends Controller
      */
     public function create()
     {
-        $categories = Category::all();
-        return view('admin.pages.create')->withCategories($categories);
+      $categories = Category::all();
+      return view('admin.pages.create')->withCategories($categories);
     }
 
     /**
@@ -49,25 +49,19 @@ class PagesController extends Controller
      */
     public function store(Request $request)
     {
-        $page = Page::create($request->all());
-
-        if ($request->hasFile('image')) {
-          $this->validate($request, [
-              'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-          ]);
-        $image = $request->file('image');
-        $filename = $page->id . '.' . Input::file('image')->getClientOriginalExtension();
-        $location = public_path('images/' . $filename);
-        Image::make(Input::file('image'))->resize(1500, 800)->save($location);
-
-        $page->image = $filename;
-
-
-        }
-
-        $page->save();
-
-        return redirect('admin/pages');
+      $page = Page::create($request->all());
+      if ($request->hasFile('image')) {
+        $this->validate($request, [
+          'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+      $image = $request->file('image');
+      $filename = $page->id . '.' . Input::file('image')->getClientOriginalExtension();
+      $location = public_path('images/' . $filename);
+      Image::make(Input::file('image'))->resize(1500, 800)->save($location);
+      $page->image = $filename;
+      }
+      $page->save();
+      return redirect('admin/pages');
     }
 
     /**
@@ -79,10 +73,9 @@ class PagesController extends Controller
      */
     public function show($id)
     {
-
-        $page = Page::find($id);
-        $categories = Category::all();
-        return view('admin.pages.show', compact('page', 'categories'));
+      $page = Page::find($id);
+      $categories = Category::all();
+      return view('admin.pages.show', compact('page', 'categories'));
     }
 
     /**
@@ -94,9 +87,9 @@ class PagesController extends Controller
      */
     public function edit($id)
     {
-        $page = Page::find($id);
-        $categories = Category::all();
-        return view('admin.pages.edit', compact('page'))->withCategories($categories);
+      $page = Page::find($id);
+      $categories = Category::all();
+      return view('admin.pages.edit', compact('page'))->withCategories($categories);
     }
 
     /**
@@ -109,24 +102,18 @@ class PagesController extends Controller
      */
     public function update($id, Request $request)
     {
-
-        $requestData = $request->all();
-
-        $page = Page::findOrFail($id);
-
-        $image = Input::file('image');
-        $filename  = $page->id . '.' . Input::file('image')->getClientOriginalExtension();
-        $location = public_path('images/' . $filename);
-        Image::make(Input::file('image'))->resize(1500, 800)->save($location);
-
-        $page->image = $filename;
-        $page->description = $request->input('description');
-        $page->category_id = $request->input('category_id');
-        $page->title = $request->input('title');
-
-        $page->save($requestData);
-
-        return redirect('admin/pages');
+      $requestData = $request->all();
+      $page = Page::findOrFail($id);
+      $image = Input::file('image');
+      $filename  = $page->id . '.' . Input::file('image')->getClientOriginalExtension();
+      $location = public_path('images/' . $filename);
+      Image::make(Input::file('image'))->resize(1500, 800)->save($location);
+      $page->image = $filename;
+      $page->description = $request->input('description');
+      $page->category_id = $request->input('category_id');
+      $page->title = $request->input('title');
+      $page->save($requestData);
+      return redirect('admin/pages');
     }
 
     /**
@@ -138,9 +125,8 @@ class PagesController extends Controller
      */
     public function destroy($id)
     {
-        Page::destroy($id);
-
-        return redirect('admin/pages');
+      Page::destroy($id);
+      return redirect('admin/pages');
     }
 
 
