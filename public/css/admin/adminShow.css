@@ -5,6 +5,8 @@
 .btn-warning, .btn-primary, .btn-danger {
   font-size: 14px;
   padding: 5px 4px;
+  background-color: #6C6C6C;
+  border-color: #6C6C6C;
 }
 
 
