@@ -67,7 +67,7 @@ class PagesController extends Controller
 
         $page->save();
 
-        return redirect('admin');
+        return redirect('admin/pages');
     }
 
     /**
@@ -126,7 +126,7 @@ class PagesController extends Controller
 
         $page->save($requestData);
 
-        return redirect('admin');
+        return redirect('admin/pages');
     }
 
     /**
@@ -140,7 +140,7 @@ class PagesController extends Controller
     {
         Page::destroy($id);
 
-        return redirect('admin');
+        return redirect('admin/pages');
     }
 
 

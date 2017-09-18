@@ -17,7 +17,7 @@
              <div class="panel panel-default">
                  <div class="panel-heading">Maak hier een nieuwe page.</div>
                     <div class="panel-body">
-                       <a href="{{ url('/admin') }}" title="Back"><button class="btn btn-warning btn-xs"><i class="fa fa-arrow-left" aria-hidden="true"></i> Terug</button></a>
+                       <a href="{{ url('/admin/pages') }}" title="Back"><button class="btn btn-warning btn-xs"><i class="fa fa-arrow-left" aria-hidden="true"></i> Terug</button></a>
                        <br />
                        <br />
 
