@@ -19,6 +19,6 @@ Route::resource('tutorial','Frontend\\PagesController');
 Route::resource('category', 'Backend\\CategoryController', ['except' => ['create']]);
 Route::resource('admin/pages', 'Backend\\PagesController');
 Route::get('admin/pages', 'Frontend\\PagesController@admin')->middleware('auth');
-Route::resource('sections', 'Backend\\SectionsController', ['except' => ['create']]);
+Route::resource('admin/pages/{id}/sections', 'Backend\\SectionsController');
 
 Auth::routes();

@@ -18,7 +18,7 @@
           <div class="panel panel-default">
             <div class="panel-heading">Page: {{ $page->title }}</div>
             <div class="panel-body">
-              <a href="{{ url('/sections/' . $page->id . '/edit' ) }}" title="sections"><button class="btn btn-warning right-side btn-xs">Sections <i class="fa fa-arrow-right" aria-hidden="true"></i> </button></a>
+              <a href="{{ url('/admin/pages/' . $page->id . '/sections/show' ) }}" title="sections"><button class="btn btn-warning right-side btn-xs">Sections <i class="fa fa-arrow-right" aria-hidden="true"></i> </button></a>
               <a href="{{ url('/admin/pages/') }}" title="Back"><button class="btn left-side btn-warning btn-xs"><i class="fa fa-arrow-left" aria-hidden="true"></i> Terug</button></a>
               <div class="whitespace">
               <a href="{{ url('/admin/pages/' . $page->id . '/edit') }}" title="Edit Post"><button class="btn btn-primary btn-center btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Bewerken</button></a>

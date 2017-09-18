@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Section;
 use Session;
+use App\Category;
 use App\Page;
 
 class SectionsController extends Controller
@@ -61,7 +62,9 @@ class SectionsController extends Controller
      */
     public function show($id)
     {
-        //
+      $page = Page::find($id);
+      $categories = Category::all();
+      return view('sections.show', compact('page', 'categories'));
     }
 
     /**
