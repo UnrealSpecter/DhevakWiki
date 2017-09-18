@@ -3,7 +3,7 @@
 @section('title', '| Alle pages')
 
 @section('brand')
-{{ url('/admin') }}
+{{ url('/admin/pages') }}
 @endsection
 
 @section('style')

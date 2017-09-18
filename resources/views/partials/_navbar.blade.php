@@ -13,7 +13,7 @@
           <ul class="dropdown-menu dropdownlist" id="admindropdown">
             <li role="presentation"><a href="{{ url('/') }}">Home</a></li>
             <li role="separator" class="divider"></li>
-            <li role="presentation"><a href="{{ url('/admin') }}">Admin</a></li>
+            <li role="presentation"><a href="{{ url('/admin/pages') }}">Admin</a></li>
             <li role="separator" class="divider"></li>
             <li role="presentation"> <a href="{{ url('/category') }}">Nieuwe categorie</a></li>
             <li role="separator" class="divider"></li>

@@ -1,7 +1,7 @@
 @extends('main')
 
 @section('brand')
-{{ url('/admin') }}
+{{ url('/admin/pages') }}
 @endsection
 
 @section('style')
