@@ -11,7 +11,7 @@
 @endsection
 
 @section('content')
- <div id="1" class="tabcontent" style="display: block;">
+ <div class="tabcontent" style="display: block;">
      <div class="col-md-1"></div>
          <div class="col-md-10">
              <div class="panel panel-default">

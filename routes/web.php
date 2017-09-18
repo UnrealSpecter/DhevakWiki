@@ -16,7 +16,7 @@ Route::get('succes', 'Frontend\\PagesController@index')->middleware('auth');
 
 Route::resource('tutorial','Frontend\\PagesController');
 
-Route::resource('category', 'Backend\\CategoryController', ['except' => ['create']]);
+Route::resource('category', 'Backend\\CategoryController', ['only' => ['index', 'destroy', 'store']]);
 Route::resource('admin/pages', 'Backend\\PagesController');
 Route::get('admin/pages', 'Frontend\\PagesController@admin')->middleware('auth');
 Route::resource('admin/pages/{id}/sections', 'Backend\\SectionsController');

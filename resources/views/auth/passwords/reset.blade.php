@@ -1,5 +1,10 @@
 @extends('main')
 
+@section('brand')
+{{ url('/') }}
+@endsection
+
+
 @section('styles')
 
 <link rel="stylesheet" href="/css/passwordscheck.css" /><!-- Include Your CSS file here-->

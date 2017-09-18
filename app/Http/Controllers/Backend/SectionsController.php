@@ -30,9 +30,11 @@ class SectionsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
-        //
+      $page = Page::find($id);
+      $categories = Category::all();
+      return view('sections.create', compact('page', 'categories'));
     }
 
     /**
@@ -75,9 +77,9 @@ class SectionsController extends Controller
      */
     public function edit($id)
     {
-      $sections = Section::all();
       $page = Page::find($id);
-      return view('admin.pages.sections', compact($sections, 'sections'));
+      $categories = Category::all();
+      return view('sections.edit', compact('page', 'categories'));
     }
 
     /**

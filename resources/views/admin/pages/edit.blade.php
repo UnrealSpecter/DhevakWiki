@@ -19,7 +19,7 @@
            <div class="panel-heading">Bewerk page: "{{ $page->title }}"</div>
            <div class="panel-body">
              <a href="{{ url('/admin/pages/') }}" title="Back"><button class="btn btn-warning btn-xs"><i class="fa fa-arrow-left" aria-hidden="true"></i> Terug</button></a>
-             <a href="{{ url('/sections/' . $page->id . '/edit' ) }}" title="sections"><button class="btn btn-warning right-side btn-xs">Sections <i class="fa fa-arrow-right" aria-hidden="true"></i> </button></a>
+             <a href="{{ url('/admin/pages/'. $page->id .'/sections/create') }}" title="Back"><button class="btn right-side btn-warning btn-xs">sections <i class="fa fa-arrow-right" aria-hidden="true"></i> </button></a>
              <br>
              <br>
 
