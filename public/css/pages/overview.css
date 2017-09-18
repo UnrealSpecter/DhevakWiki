@@ -7,10 +7,14 @@
   width: 100%;
 }
 
-.page {
-  width: 33.33%
-}
+@media (min-width: 1000px){
 
+.page {
+  width: 20%;
+  margin-right: 15px;
+  margin-left: 15px;
+}
+}
 .card a {
   color: black;
 }

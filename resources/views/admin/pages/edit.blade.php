@@ -18,7 +18,7 @@
          <div class="panel panel-default">
            <div class="panel-heading">Bewerk page: "{{ $page->title }}"</div>
            <div class="panel-body">
-             <a href="{{ url('/admin/') }}" title="Back"><button class="btn btn-warning btn-xs"><i class="fa fa-arrow-left" aria-hidden="true"></i> Terug</button></a>
+             <a href="{{ url('/admin/pages/') }}" title="Back"><button class="btn btn-warning btn-xs"><i class="fa fa-arrow-left" aria-hidden="true"></i> Terug</button></a>
              <a href="{{ url('/sections/' . $page->id . '/edit' ) }}" title="sections"><button class="btn btn-warning right-side btn-xs">Sections <i class="fa fa-arrow-right" aria-hidden="true"></i> </button></a>
              <br>
              <br>
@@ -31,7 +31,7 @@
                </ul>
              @endif
 
-             {!! Form::model($page, ['method' => 'PATCH', 'url' => ['/admin', $page->id], 'class' => 'form-horizontal', 'files' => true ]) !!}
+             {!! Form::model($page, ['method' => 'PATCH', 'url' => ['/admin/pages', $page->id], 'class' => 'form-horizontal', 'files' => true ]) !!}
 
              @include ('partials._form', ['submitButtonText' => 'Update'])
 

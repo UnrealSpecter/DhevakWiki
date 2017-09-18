@@ -29,7 +29,7 @@
                          </ul>
                        @endif
 
-                       {!! Form::open(['url' => '/admin', 'class' => 'form-horizontal', 'files' => true]) !!}
+                       {!! Form::open(['url' => '/admin/pages', 'class' => 'form-horizontal', 'files' => true]) !!}
 
                        @include ('partials._form')
 

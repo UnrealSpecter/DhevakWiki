@@ -12,13 +12,12 @@
 
 @section('content')
   <a href="{{ url('/admin/pages/create') }}" class="btn btn-success btn-block createbutton" title="Niewe page"><i class="fa fa-plus" aria-hidden="true"></i></a>
-  <h1 class="display-3 padding-top padding-bottom logo">Dhévak</h1>
   <div class="container">
   <div class="row breede justify-content-center ">
     @foreach($pages as $page)
       <div class="card page padding-remove margin-top">
         {!! Form::open(['method'=>'DELETE',
-          'url' => ['/admin', $page->id],
+          'url' => ['/admin/pages', $page->id],
           'style' => 'display:inline'
           ])
         !!}

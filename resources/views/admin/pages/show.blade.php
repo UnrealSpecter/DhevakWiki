@@ -18,11 +18,11 @@
           <div class="panel panel-default">
             <div class="panel-heading">Page: {{ $page->title }}</div>
             <div class="panel-body">
-              <a href="{{ url('/admin/') }}" title="Back"><button class="btn btn-warning btn-xs"><i class="fa fa-arrow-left" aria-hidden="true"></i> Terug</button></a>
-              <a href="{{ url('/admin/' . $page->id . '/edit') }}" title="Edit Post"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Bewerken</button></a>
+              <a href="{{ url('/admin/pages/') }}" title="Back"><button class="btn btn-warning btn-xs"><i class="fa fa-arrow-left" aria-hidden="true"></i> Terug</button></a>
+              <a href="{{ url('/admin/pages/' . $page->id . '/edit') }}" title="Edit Post"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Bewerken</button></a>
               {!! Form::open([
                 'method'=>'DELETE',
-                'url' => ['admin', $page->id],
+                'url' => ['admin/pages', $page->id],
                 'style' => 'display:inline'
                 ])
               !!}
