@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Backend;
 
 use Illuminate\Http\Request;
-use App\Section;
-use Session;
-use App\Page;
 
-class SectionsController extends Controller
+use App\Category;
+use Session;
+
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,7 +20,8 @@ class SectionsController extends Controller
 
     public function index()
     {
-
+        $categories = Category::with('entries')->get();
+        return view('categories.index', compact($categories, 'categories'));
     }
 
     /**
@@ -41,15 +42,16 @@ class SectionsController extends Controller
      */
     public function store(Request $request)
     {
-      $this->validate($request, array(
-        'name' => 'required|max:255'
-      ));
 
-      $section = Section::create($request->all());
+        $this->validate($request, array(
+          'name' => 'required|max:255'
+        ));
 
-      $section->save();
+        $category = Category::create($request->all());
 
-      return redirect()->back();
+        $category->save();
+
+        return redirect()->route('category.index');
     }
 
     /**
@@ -71,9 +73,7 @@ class SectionsController extends Controller
      */
     public function edit($id)
     {
-      $sections = Section::all();
-      $page = Page::find($id);
-      return view('admin.pages.sections', compact($sections, 'sections'));
+
     }
 
     /**
@@ -85,7 +85,7 @@ class SectionsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
     }
 
     /**
@@ -96,8 +96,8 @@ class SectionsController extends Controller
      */
     public function destroy($id)
     {
-      Section::destroy($id);
+      Category::destroy($id);
 
-      return redirect()->back();
+      return redirect('category');
     }
 }

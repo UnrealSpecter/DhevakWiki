@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Backend;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -140,7 +140,7 @@ class PagesController extends Controller
     {
         Page::destroy($id);
 
-        return redirect('admin');  
+        return redirect('admin');
     }
 
 

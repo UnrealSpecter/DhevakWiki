@@ -11,14 +11,14 @@
 |
 */
 
-Route::get('/', 'PagesController@Index');
-Route::get('succes', 'PagesController@index')->middleware('auth');
+Route::get('/', 'Frontend\\PagesController@Index');
+Route::get('succes', 'Frontend\\PagesController@index')->middleware('auth');
 
-Route::resource('tutorial','PagesController');
+Route::resource('tutorial','Frontend\\PagesController');
 
-Route::resource('category', 'CategoryController', ['except' => ['create']]);
-Route::resource('admin', 'Admin\\PagesController');
-Route::get('admin', 'PagesController@admin')->middleware('auth');
-Route::resource('sections', 'SectionsController', ['except' => ['create']]);
+Route::resource('category', 'Backend\\CategoryController', ['except' => ['create']]);
+Route::resource('admin', 'Backend\\PagesController');
+Route::get('admin', 'Frontend\\PagesController@admin')->middleware('auth');
+Route::resource('sections', 'Backend\\SectionsController', ['except' => ['create']]);
 
 Auth::routes();
