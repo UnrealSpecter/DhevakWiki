@@ -4,7 +4,13 @@
 {{ url('/') }}
 @endsection
 
+@section('style')
+  <link rel="stylesheet" href="{{ asset('css/login/login.css') }}">
+@endsection
+
 @section('content')
+<br>
+<br>
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">

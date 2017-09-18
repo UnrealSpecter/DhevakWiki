@@ -13,7 +13,7 @@
 @section('content')
   <div class="row padding-top">
     <div class="col-md-5 col-md-offset-1">
-      <a href="{{ url('/admin/') }}" title="Back"><button class="btn btn-warning btn-xs padding-bottom"><i class="fa fa-arrow-left" aria-hidden="true"></i> Terug</button></a>
+      <a href="{{ url('/admin/pages/') }}" title="Back"><button class="btn btn-warning btn-xs padding-bottom"><i class="fa fa-arrow-left" aria-hidden="true"></i> Terug</button></a>
       <h1>Categorieën</h1>
       <table class="table">
         <thead>
