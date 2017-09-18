@@ -134,6 +134,7 @@ p {
 }
 
 .deleteknop {
+  padding-top: 15px;
   padding-left: 20px;
   font-size: 20px;
   position: absolute;

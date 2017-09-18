@@ -95,13 +95,6 @@
   right: 27%;
 }
 
-.goo {
-  position: absolute;
-  visibility: hidden;
-  width: 1px;
-  height: 1px;
-}
-
 .button--bubble__container {
   top: 50%;
   margin-top: -25px;
