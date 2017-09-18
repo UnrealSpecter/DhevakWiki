@@ -1,0 +1,34 @@
+.card a {
+  color: black;
+}
+
+.card a:hover {
+  text-decoration: none;
+  color: black;
+}
+
+.logo {
+  font-family: "Times New Roman";
+}
+
+.padding-remove {
+  padding: 0px;
+}
+
+.display-3 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 50px;
+}
+
+.title{
+  text-align: center;
+}
+
+.padding-top {
+  padding-top: 15px;
+}
+
+.padding-bottom {
+  padding-bottom: 15px;
+}

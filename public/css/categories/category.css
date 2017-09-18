@@ -1,0 +1,31 @@
+.deleteknop {
+  background-color: transparent;
+  border: none;
+  color: red;
+  font-size: 20px;
+}
+
+.deleteknop:hover {
+  cursor:pointer
+}
+
+.margin-top {
+  margin-top: 15px;
+}
+
+.padding-top {
+  padding-top: 35px;
+}
+
+.padding-top-more {
+  padding-top: 20px;
+}
+
+.padding-bottom {
+  margin-top: -35px;
+}
+
+.btn-warning {
+  font-size: 14px;
+  padding: 5px 4px;
+}

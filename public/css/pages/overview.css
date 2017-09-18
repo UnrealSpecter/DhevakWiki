@@ -1,0 +1,48 @@
+.display-3 {
+  font-family: "Times New Roman";
+  text-align: center;
+}
+
+.card a {
+  color: black;
+}
+
+.card a:hover {
+  color: black;
+  text-decoration: none;
+}
+
+.padding-bottom {
+  padding-bottom: 15px;
+}
+
+.padding-top {
+  padding-top: 15px;
+}
+
+.padding-remove {
+  padding: 0;
+}
+
+.deleteknop {
+  padding-left: 20px;
+  font-size: 20px;
+  position: absolute;
+  color: red;
+  background-color: transparent;
+  border: none;
+}
+
+.deleteknop:hover {
+  cursor:pointer
+}
+
+.createbutton {
+  border: none;
+  border-radius: 0;
+  background-color: #31AA1D;
+}
+
+.createbutton:hover {
+  background-color: #2e8f1e;
+}
