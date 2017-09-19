@@ -20,7 +20,8 @@
     {!! Form::label('image', 'Thumbnail', ['class' => 'col-md-4 control-label']) !!}
     <div class="col-md-6">
         {!! Form::file('image', ['class' => 'form-control btn btn-default btn-file', 'required' => '',
-        'data-parsley-required-message' => "uploud wel even een image", 'data-parsley-max-file-size' => '2048']) !!}
+        'data-parsley-required-message' => "uploud wel even een image", 'data-parsley-max-file-size' => '2048',
+        'data-parsley-trigger' => "change"]) !!}
         {!! $errors->first('image', '<p class="help-block">:message</p>') !!}
     </div>
 </div>
