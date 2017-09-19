@@ -126,13 +126,21 @@ class PagesController extends Controller
       $location = public_path('images/' . $filename);
       Image::make(Input::file('image'))->resize(1500, 800)->save($location);
 
+      if ($request->input('slug') == $page->slug) {
+      $this->validate($request, array(
+        'title' => 'required|max:225|min:5',
+        'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        'description' => 'required|min:5',
+        'category_id' => 'required|integer'
+        ));
+      } else {
       $this->validate($request, [
         'title' => 'required|max:225|min:5',
         'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         'slug' => 'required|alpha_dash|min:5|max:255|unique:pages,slug',
         'description' => 'required|min:5',
         'category_id' => 'required|integer'
-      ]);
+      ]);}
 
       $page->image = $filename;
       $page->description = $request->input('description');
