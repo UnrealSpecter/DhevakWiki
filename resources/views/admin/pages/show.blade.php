@@ -48,7 +48,7 @@
                     </tr>
                     <tr>
                       <th> Slug </th>
-                      <td> <a href="{{ url($page->slug) }}">{{ url($page->slug) }}</a> </td>
+                      <td> <a href="{{ url('tutorial/'.$page->slug) }}">{{ url('tutorial/'.$page->slug) }}</a> </td>
                     </tr>
                     <tr>
                       <th> Thumbnail </th>
