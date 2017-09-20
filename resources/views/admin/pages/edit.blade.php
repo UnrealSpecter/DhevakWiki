@@ -49,5 +49,5 @@
  <script src='http://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenLite.min.js'></script>
  <script src='http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TimelineLite.min.js'></script>
  <script src="/js/bubble/index.js"></script>
- 
+
 @endsection

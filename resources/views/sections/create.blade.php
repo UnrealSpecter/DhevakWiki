@@ -20,7 +20,17 @@
                        <a href="{{ url('/admin/pages/'. $page->id .'/edit') }}" title="Back"><button class="btn btn-warning btn-xs"><i class="fa fa-arrow-left" aria-hidden="true"></i> Terug</button></a>
                        <br />
                        <br />
-
+                       <div class="col-md-2"></div>
+                         <div class="col-md-3 padding-top-more">
+                           <div class="well">
+                             {!! Form::open(['url' => '/admin/pages/ '.$page->id .'/sections', 'method' => 'POST']) !!}
+                               <h2>nieuwe categorie</h2>
+                               {{ Form::label('name', 'section:') }}
+                               {{ Form::text('name', null, ['class' => 'form-control', 'minlength' => '5']) }}
+                               {{ Form::submit('maak nieuwe section', ['class' => 'btn btn-primary btn-block margin-top']) }}
+                             {!! Form::close()!!}
+                           </div>
+                         </div>
 
                    </div>
                </div>

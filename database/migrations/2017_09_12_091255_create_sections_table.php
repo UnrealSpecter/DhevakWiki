@@ -16,8 +16,8 @@ class CreateSectionsTable extends Migration
       Schema::create('sections', function(Blueprint $table) {
           $table->increments('id');
           $table->string('name');
-          $table->integer('sections_id')->unsigned();
-          $table->foreign('sections_id')->references('id')->on('pages')->onDelete('cascade');
+          $table->integer('page_id')->unsigned();
+          $table->foreign('page_id')->references('id')->on('pages')->onDelete('cascade');
           $table->timestamps();
       });
     }

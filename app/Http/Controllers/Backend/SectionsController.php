@@ -43,12 +43,13 @@ class SectionsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store($id, Request $request)
     {
       $this->validate($request, array(
         'name' => 'required|max:255'
       ));
       $section = Section::create($request->all());
+      $section->page_id = $id;
       $section->save();
       return redirect()->back();
     }
@@ -59,7 +60,8 @@ class SectionsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+
+     public function show($id)
     {
       $page = Page::find($id);
       $categories = Category::all();

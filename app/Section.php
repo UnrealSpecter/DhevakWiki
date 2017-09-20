@@ -8,11 +8,11 @@ class section extends Model
 {
   protected $table = 'sections';
 
-  protected $fillable = ['name'];   
+  protected $fillable = ['name', 'page_id'];
 
-  public function entries(){
+  public function page(){
 
-    return $this->hasMany('App\Page');
+    return $this->belongsTo('App\Page');
 
  }
 }

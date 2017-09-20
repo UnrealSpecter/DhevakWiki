@@ -25,7 +25,7 @@ class Page extends Model
      *
      * @var array
      */
-    protected $fillable = ['title', 'description', 'category_id', 'image', 'section_id', 'slug'];
+    protected $fillable = ['title', 'description', 'category_id', 'image', 'slug'];
 
     /**
     * Get the category record associated with the post.
@@ -33,7 +33,12 @@ class Page extends Model
     public function category()
     {
       return $this->belongsTo('App\Category');
-      return $this->belongsTo('App\Section');
+
+    }
+
+    public function sections()
+    {
+        return $this->hasMany('App\Section');
     }
 
 }

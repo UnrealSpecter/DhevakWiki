@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Page;
 use Illuminate\Http\Request;
 use App\Category;
+use App\Section;
 use Session;
 use Image;
 use Storage;
