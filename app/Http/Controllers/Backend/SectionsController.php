@@ -33,8 +33,8 @@ class SectionsController extends Controller
     public function create($id)
     {
       $page = Page::find($id);
-      $categories = Category::all();
-      return view('sections.create', compact('page', 'categories'));
+
+      return view('sections.create', compact('page'));
     }
 
     /**
@@ -48,10 +48,19 @@ class SectionsController extends Controller
       $this->validate($request, array(
         'name' => 'required|max:255'
       ));
-      $section = Section::create($request->all());
-      $section->page_id = $id;
-      $section->save();
-      return redirect()->back();
+      
+        //   Dit kan niet omdat hij probeert het object aan te maken met alles wat in de request staat. Dat is alleen de naam en niet de id.
+        //   Dus je moet het handmatig doen vanaf een leeg object. Dan werkt het prima.
+        //   $section = Section::create($request->all());
+        //   $section->page_id = $id;
+        //   $section->save();
+        //   return redirect()->back();
+
+        $section = new Section;
+        $section->name = $request->name;
+        $section->page_id = $id;
+        $section->save();
+        return redirect()->back();
     }
 
     /**
