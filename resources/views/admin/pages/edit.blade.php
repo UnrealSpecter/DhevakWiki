@@ -32,8 +32,20 @@
                </ul>
              @endif
 
-             {!! Form::model($page, ['method' => 'PATCH', 'url' => ['/admin/pages', $page->id], 'class' => 'form-horizontal', 'files' => true ]) !!}
 
+
+             {!! Form::model($page, ['method' => 'PATCH', 'url' => ['/admin/pages', $page->id], 'class' => 'form-horizontal', 'files' => true,  'enctype' => 'multipart/form-data' ]) !!}
+             @section('image')
+             @if($page->image)
+             <div class="col-md-4">
+
+             </div>
+                <div class="col-md-6">
+                        <img class="imgborder" width="50%" src="/images/{{ $page->image }}"
+                             alt="{{$page->title}}">
+                </div>
+            @endif
+             @endsection
              @include ('partials._form', ['submitButtonText' => 'Update'])
 
              {!! Form::close() !!}

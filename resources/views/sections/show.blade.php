@@ -27,10 +27,13 @@
                   <tr>
                     <th> section lijst </th>
                     <td> flinke section </td>
-                    <td><a href="{{ url('/admin/pages/' . $page->id . '/sections/edit') }}" title="Edit Post"><button class="btn btn-primary btn-center btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Bewerken</button></a></td>
+                  </tr>@foreach($page->sections as $section)
+                  <tr>
+                    <td>{{$section->name}}  {{$section->id}}</td>
+                    <td><a href="{{ url('/admin/pages/' . $page->id . '/sections/'. $section->id .'/edit') }}" title="Edit Post"><button class="btn btn-primary btn-center btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Bewerken</button></a></td>
                     <td>  {!! Form::open([
                         'method'=>'DELETE',
-                        'url' => ['admin/pages', $page->id],
+                        'url' => ['/admin/pages/'. $page->id .'/sections/'. $section->id],
                         'style' => 'display:inline',
                         'class' => 'btn-center'
                         ])
@@ -44,6 +47,7 @@
                       !!}
                       {!! Form::close() !!}</td>
                   </tr>
+                  @endforeach
                 </tbody>
               </table>
             </div>

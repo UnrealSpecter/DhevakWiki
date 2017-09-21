@@ -46,9 +46,9 @@ class SectionsController extends Controller
     public function store($id, Request $request)
     {
       $this->validate($request, array(
-        'name' => 'required|max:255'
+        'name' => 'required|max:255|min:5'
       ));
-      
+
         //   Dit kan niet omdat hij probeert het object aan te maken met alles wat in de request staat. Dat is alleen de naam en niet de id.
         //   Dus je moet het handmatig doen vanaf een leeg object. Dan werkt het prima.
         //   $section = Section::create($request->all());
@@ -73,8 +73,8 @@ class SectionsController extends Controller
      public function show($id)
     {
       $page = Page::find($id);
-      $categories = Category::all();
-      return view('sections.show', compact('page', 'categories'));
+      $section = Section::all();
+      return view('sections.show', compact('page', 'section'));
     }
 
     /**
@@ -86,8 +86,8 @@ class SectionsController extends Controller
     public function edit($id)
     {
       $page = Page::find($id);
-      $categories = Category::all();
-      return view('sections.edit', compact('page', 'categories'));
+      $section = Section::find($id);
+      return view('sections.edit', compact('page', 'section'));
     }
 
     /**
@@ -99,7 +99,9 @@ class SectionsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $this->validate($request, array(
+        'name' => 'required|max:255|min:5'
+      ));
     }
 
     /**
@@ -109,8 +111,9 @@ class SectionsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
-    {
-      Section::destroy($id);
+    { dd($id);
+      $section = Section::find($id);
+      $section->delete();
       return redirect()->back();
     }
 }
