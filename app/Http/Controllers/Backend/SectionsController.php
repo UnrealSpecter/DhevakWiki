@@ -73,7 +73,7 @@ class SectionsController extends Controller
      public function show($id)
     {
       $page = Page::find($id);
-      $section = Section::all();
+      $section = Section::find($id);
       return view('sections.show', compact('page', 'section'));
     }
 
@@ -99,9 +99,15 @@ class SectionsController extends Controller
      */
     public function update(Request $request, $id)
     {
+      $section = Section::findOrFail($id);
       $this->validate($request, array(
         'name' => 'required|max:255|min:5'
       ));
+      $requestData = $request->all();
+      $section->name = $request->name;
+      $section->page_id = $id;
+      $section->save($requestData);
+      return redirect()->back();
     }
 
     /**

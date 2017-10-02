@@ -28,9 +28,9 @@
                   <tr>
 
 
-                                 {!! Form::model($section, ['method' => 'PATCH', 'url' => ['/admin/pages', $section->id], 'class' => 'form-horizontal', 'files' => true,  'enctype' => 'multipart/form-data' ]) !!}
+                                 {!! Form::model($section, ['method' => 'PATCH', 'url' => ['/admin/pages', $page->id, 'sections', $section->id], 'class' => 'form-horizontal', 'files' => true,  'enctype' => 'multipart/form-data' ]) !!}
                     <div class="form-group {{ $errors->has('title') ? 'has-error' : ''}}">
-                        {!! Form::label('name', 'kut section', ['class' => 'col-md-4 control-label']) !!}
+                        {!! Form::label('name', 'section:', ['class' => 'col-md-4 control-label']) !!}
                         <div class="col-md-6">
                             {!! Form::text('name', null, ['class' => 'form-control', 'required' => '',
                             'minlength' => '5', 'maxlength' => '50', 'data-parsley-required-message' => "vul dit wel even in",
