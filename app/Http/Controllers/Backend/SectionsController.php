@@ -83,10 +83,10 @@ class SectionsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id, $sectionId)
     {
       $page = Page::find($id);
-      $section = Section::find($id);
+      $section = Section::find($sectionId);
       return view('sections.edit', compact('page', 'section'));
     }
 
@@ -97,9 +97,9 @@ class SectionsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id, $sectionId)
     {
-      $section = Section::findOrFail($id);
+      $section = Section::findOrFail($sectionId);
       $this->validate($request, array(
         'name' => 'required|max:255|min:5'
       ));
@@ -116,9 +116,9 @@ class SectionsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    { dd($id);
-      $section = Section::find($id);
+    public function destroy($id, $sectionId)
+    {
+      $section = Section::find($sectionId);
       $section->delete();
       return redirect()->back();
     }

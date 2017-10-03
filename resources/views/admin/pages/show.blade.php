@@ -18,7 +18,7 @@
           <div class="panel panel-default">
             <div class="panel-heading">Page: {{ $page->title }}</div>
             <div class="panel-body">@foreach($page->sections as $section)
-              <a href="{{ url('/admin/pages/' . $page->id . '/sections', $section->id ) }}" title="sections"><button class="btn btn-warning right-side btn-xs">Sections <i class="fa fa-arrow-right" aria-hidden="true"></i> </button></a>
+              <a href="{{ url('/admin/pages/' . $page->id . '/sections' ) }}" title="sections"><button class="btn btn-warning right-side btn-xs">Sections <i class="fa fa-arrow-right" aria-hidden="true"></i> </button></a>
               @endforeach
               <a href="{{ url('/admin/pages/') }}" title="Back"><button class="btn left-side btn-warning btn-xs"><i class="fa fa-arrow-left" aria-hidden="true"></i> Terug</button></a>
               <div class="whitespace">

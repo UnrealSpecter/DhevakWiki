@@ -17,7 +17,7 @@
              <div class="panel panel-default">
                  <div class="panel-heading">Maak hier een nieuwe section.</div>
                     <div class="panel-body">
-                       <a href="/admin/pages/{{$page->id}}/edit" title="Back"><button class="btn btn-warning btn-xs"><i class="fa fa-arrow-left" aria-hidden="true"></i> Terug</button></a>
+                       <a href="/admin/pages/{{$page->id}}" title="Back"><button class="btn btn-warning btn-xs"><i class="fa fa-arrow-left" aria-hidden="true"></i> Terug</button></a>
                        <br />
                        <br />
                        <div class="col-md-2"></div>

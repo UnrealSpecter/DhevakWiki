@@ -26,12 +26,12 @@
                 <tbody>
                   <tr>
                     <th> section lijst </th>
-                    <td> flinke section </td>
+                    <td> acties </td>
                   </tr>@foreach($page->sections as $section)
                   <tr>
-                    <td>{{$section->name}}  {{$section->id}}</td>
-                    <td><a href="{{ url('/admin/pages/' . $page->id . '/sections/'. $section->id .'/edit') }}" title="Edit Post"><button class="btn btn-primary btn-center btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Bewerken</button></a></td>
-                    <td>  {!! Form::open([
+                    <td>{{$section->name}}</td>
+                    <td><a href="{{ url('/admin/pages/' . $page->id . '/sections/'. $section->id .'/edit') }}" title="bewerk section"><button class="btn btn-primary btn-center btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Bewerken</button></a>
+                      {!! Form::open([
                         'method'=>'DELETE',
                         'url' => ['/admin/pages/'. $page->id .'/sections/'. $section->id],
                         'style' => 'display:inline',
@@ -45,7 +45,9 @@
                         'onclick'=>'return confirm("Wilt u deze verwijderen?")'
                         ))
                       !!}
-                      {!! Form::close() !!}</td>
+                      {!! Form::close() !!}
+                    <a href="{{ url('/admin/pages/' . $page->id . '/sections/'. $section->id .'/tutorial/show') }}" title="show tutorial"><button class="btn btn-info btn-center btn-xs"><i class="fa fa-eye" aria-hidden="true"></i> Bekijk Tutorial</button></a>
+                    <a href="{{ url('/admin/pages/' . $page->id . '/sections/'. $section->id .'/tutorial/create') }}" title="maak tutorial"><button class="btn btn-success btn-center btn-xs"><i class="fa fa-plus" aria-hidden="true"></i> Maak Tutorial</button></a></td>
                   </tr>
                   @endforeach
                 </tbody>

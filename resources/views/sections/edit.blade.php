@@ -18,13 +18,13 @@
         <div class="panel panel-default">
           <div class="panel-heading">Page: {{ $page->title }}</div>
           <div class="panel-body">
-            <a href="{{ url('/admin/pages/'. $page->id) }}" title="Back"><button class="btn left-side btn-warning btn-xs"><i class="fa fa-arrow-left" aria-hidden="true"></i> Terug</button></a>
+            <a href="{{ url('/admin/pages/'. $page->id . '/sections') }}" title="Back"><button class="btn left-side btn-warning btn-xs"><i class="fa fa-arrow-left" aria-hidden="true"></i> Terug</button></a>
             <br>
             <div class="table-responsive">
               <table class="table table-borderless">
                 <tbody>
                   <tr>
-                  </tr>@foreach($page->sections as $section)
+                  </tr>
                   <tr>
 
 
@@ -35,12 +35,13 @@
                             {!! Form::text('name', null, ['class' => 'form-control', 'required' => '',
                             'minlength' => '5', 'maxlength' => '50', 'data-parsley-required-message' => "vul dit wel even in",
                              'data-parsley-trigger' => "change"]) !!}
+                             {{ Form::submit('edit section', ['class' => 'btn btn-primary btn-block margin-top']) }}
                             {!! $errors->first('title', '<p class="help-block">:message</p>') !!}
                         </div>
                     </div>
+
                      {!! Form::close() !!}
                   </tr>
-                  @endforeach
                 </tbody>
               </table>
             </div>

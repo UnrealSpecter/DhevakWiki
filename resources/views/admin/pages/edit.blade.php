@@ -19,8 +19,15 @@
          <div class="panel panel-default">
            <div class="panel-heading">Bewerk page: "{{ $page->title }}"</div>
            <div class="panel-body">
-             <a href="{{ url('/admin/pages/') }}" title="Back"><button class="btn btn-warning btn-xs"><i class="fa fa-arrow-left" aria-hidden="true"></i> Terug</button></a>
-             <a href="{{ url('/admin/pages/'. $page->id .'/sections/create') }}" title="Back"><button class="btn right-side btn-warning btn-xs">sections <i class="fa fa-arrow-right" aria-hidden="true"></i> </button></a>
+             <a href="{{ url('/admin/pages/') }}" title="terug"><button class="btn btn-warning left-side btn-xs"><i class="fa fa-arrow-left" aria-hidden="true"></i> Terug</button></a>
+              <a href="{{ url('/admin/pages/'. $page->id .'/sections/create') }}" title="section create"><button class="btn right-side btn-warning btn-xs">maak sections <i class="fa fa-arrow-right" aria-hidden="true"></i> </button></a>
+             <div class="whitespace">
+             <a href="{{ url('/admin/pages/'. $page->id) }}" title="show"><button class="btn btn-warning btn-center btn-xs"><i class="fa fa-arrow-left" aria-hidden="true"></i> Page show</button></a>
+             @foreach($page->sections as $section) @if ($loop->first)
+               <a href="{{ url('/admin/pages/' . $page->id . '/sections' ) }}" title="sections"><button class="btn btn-center btn-warning btn-xs">Sections Show <i class="fa fa-arrow-right" aria-hidden="true"></i> </button></a>
+              @endif @endforeach
+            </div>
+
              <br>
              <br>
 
