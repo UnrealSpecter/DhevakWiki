@@ -26,7 +26,7 @@
                   <tr>
                   </tr>
                   <tr>
-
+                    <p></p>
 
                                  {!! Form::model($section, ['method' => 'PATCH', 'url' => ['/admin/pages', $page->id, 'sections', $section->id], 'class' => 'form-horizontal', 'files' => true,  'enctype' => 'multipart/form-data' ]) !!}
                     <div class="form-group {{ $errors->has('title') ? 'has-error' : ''}}">

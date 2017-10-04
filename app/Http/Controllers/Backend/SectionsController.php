@@ -8,6 +8,7 @@ use App\Section;
 use Session;
 use App\Category;
 use App\Page;
+use App\Tutorial;
 
 class SectionsController extends Controller
 {

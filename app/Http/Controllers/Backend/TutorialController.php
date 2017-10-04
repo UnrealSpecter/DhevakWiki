@@ -8,6 +8,7 @@ use App\Section;
 use Session;
 use App\Category;
 use App\Page;
+use App\Tutorial;
 
 class TutorialController extends Controller
 {
@@ -25,9 +26,11 @@ class TutorialController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create($id)
+    public function create($id, $sectionId)
     {
-      return view('tutorial.create');
+      $page = Page::find($id);
+      $section = Section::find($sectionId);
+      return view('tutorial.create', compact('page', 'section'));
     }
 
     /**
@@ -36,9 +39,18 @@ class TutorialController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store($id, Request $request)
+    public function store($id, $sectionId, Request $request)
     {
-      
+      $page = Page::find($id);
+      $section = Section::find($sectionId);
+
+      $tutorial = new Tutorial;
+
+      $tutorial->content = $request->input('content');
+      $tutorial->section_id = $sectionId;
+      $tutorial->save();
+
+      return redirect('admin/pages');
     }
 
     /**
@@ -48,9 +60,11 @@ class TutorialController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-     public function show($id)
+     public function show($id, $sectionId)
     {
-
+      $page = Page::find($id);
+      $section = Section::find($sectionId);
+      return view('tutorial.show', compact('page', 'section'));
     }
 
     /**
@@ -59,9 +73,11 @@ class TutorialController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id, $sectionId)
     {
-
+      $page = Page::find($id);
+      $section = Section::find($sectionId);
+      return view('tutorial.edit', compact('page', 'section'));
     }
 
     /**
@@ -71,9 +87,16 @@ class TutorialController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id, $sectionId)
     {
+      $page = Page::findOrFail($id);
+      $section = Section::findOrFail($sectionId);
 
+      $tutorial = Tutorial::findOrFail();
+
+      $tutorial->content = $request->input('content');
+      $tutorial->section_id = $sectionId;
+      $tutorial->save();
     }
 
     /**
@@ -82,8 +105,10 @@ class TutorialController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id, $sectionId)
     {
-
+      $tutorial = Tutorial::find($sectionId);
+      $tutorial->delete();
+      return redirect()->back();
     }
 }

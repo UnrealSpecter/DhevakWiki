@@ -25,6 +25,6 @@ Route::resource('admin/pages/{page}/sections/{section}/tutorial' , 'Backend\\Tut
 Route::get('admin/pages/{page}/sections/{section}/tutorial' , 'Backend\\TutorialController@Show');
 Route::get('admin/pages/{page}/sections/{section}/tutorial/edit' , 'Backend\\TutorialController@Edit');
 Route::delete('admin/pages/{page}/sections/{section}/tutorial' , 'Backend\\TutorialController@destroy');
-Route::post('admin/pages/{page}/sections/{section}/tutorial' , 'Backend\\TutorialController@update');
+Route::match(['put', 'patch'], 'admin/pages/{page}/sections/{section}/tutorial' , 'Backend\\TutorialController@update');
 Route::post('admin/pages/{page}/sections/{section}/tutorial' , 'Backend\\TutorialController@store');
 Auth::routes();

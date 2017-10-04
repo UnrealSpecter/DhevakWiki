@@ -5,6 +5,8 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Page;
 use App\Category;
+use App\Section;
+use App\Tutorial;
 
 class PagesController extends Controller
 {
@@ -18,7 +20,7 @@ class PagesController extends Controller
   {
     $pages = Page::where('slug', $slug)->first();
     $categories = Category::all();
-    return view('tutorial.single')->withPages($pages);
+    return view('tutorial.single')->withPages($pages);;
   }
 
   public function admin()

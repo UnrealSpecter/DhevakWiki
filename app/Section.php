@@ -15,4 +15,9 @@ class section extends Model
     return $this->belongsTo('App\Page');
 
  }
+ public function tutorial(){
+
+   return $this->hasOne('App\Tutorial');
+
+}
 }

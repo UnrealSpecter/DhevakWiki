@@ -47,3 +47,11 @@ nav .back:hover {
     line-height: 20px;
     text-align:center;
 }
+
+.mce-notification-inner {
+  display: none;
+}
+
+#mceu_27 {
+  display: none
+}

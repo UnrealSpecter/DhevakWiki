@@ -46,7 +46,7 @@
                         ))
                       !!}
                       {!! Form::close() !!}
-                    <a href="{{ url('/admin/pages/' . $page->id . '/sections/'. $section->id .'/tutorial/show') }}" title="show tutorial"><button class="btn btn-info btn-center btn-xs"><i class="fa fa-eye" aria-hidden="true"></i> Bekijk Tutorial</button></a>
+                    <a href="{{ url('/admin/pages/' . $page->id . '/sections/'. $section->id .'/tutorial') }}" title="show tutorial"><button class="btn btn-info btn-center btn-xs"><i class="fa fa-eye" aria-hidden="true"></i> Bekijk Tutorial</button></a>
                     <a href="{{ url('/admin/pages/' . $page->id . '/sections/'. $section->id .'/tutorial/create') }}" title="maak tutorial"><button class="btn btn-success btn-center btn-xs"><i class="fa fa-plus" aria-hidden="true"></i> Maak Tutorial</button></a></td>
                   </tr>
                   @endforeach
