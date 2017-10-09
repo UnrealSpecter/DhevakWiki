@@ -87,16 +87,17 @@ class TutorialController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id, $sectionId)
+    public function update($id, $sectionId, Request $request)
     {
-      $page = Page::findOrFail($id);
-      $section = Section::findOrFail($sectionId);
 
-      $tutorial = Tutorial::findOrFail();
+      $page = Page::find($id);
+      $section = Section::find($sectionId);
+      $tutorial = Tutorial::findOrFail($id);
 
       $tutorial->content = $request->input('content');
       $tutorial->section_id = $sectionId;
       $tutorial->save();
+      return redirect('admin/pages');
     }
 
     /**
@@ -107,7 +108,7 @@ class TutorialController extends Controller
      */
     public function destroy($id, $sectionId)
     {
-      $tutorial = Tutorial::find($sectionId);
+      $tutorial = Tutorial::find($id);
       $tutorial->delete();
       return redirect()->back();
     }

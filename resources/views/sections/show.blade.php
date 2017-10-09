@@ -20,6 +20,7 @@
           <div class="panel-heading">Page: {{ $page->title }}</div>
           <div class="panel-body">
             <a href="{{ url('/admin/pages/'. $page->id) }}" title="Back"><button class="btn left-side btn-warning btn-xs"><i class="fa fa-arrow-left" aria-hidden="true"></i> Terug</button></a>
+            <a href="{{ url('/admin/pages/'. $page->id .'/sections/create') }}" title="section create"><button class="btn right-side btn-warning btn-xs">maak sections <i class="fa fa-arrow-right" aria-hidden="true"></i> </button></a>
             <br>
             <div class="table-responsive">
               <table class="table table-borderless">

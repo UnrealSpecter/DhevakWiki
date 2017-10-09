@@ -16,11 +16,11 @@ class PagesController extends Controller
    return view('pages.welcome')->withPages($pages);
  }
 
- public function tutorial($slug)
+ public function tutorial($slug, $sectionId)
   {
-    $pages = Page::where('slug', $slug)->first();
-    $categories = Category::all();
-    return view('tutorial.single')->withPages($pages);;
+    $page = Page::find($slug);
+    $section = Section::find($sectionId);
+    return view('tutorial.single', compact('page', 'section'));
   }
 
   public function admin()

@@ -12,6 +12,6 @@
 
 @section('content')
 
-<p>"{{ $pages->title }}"</p>
+<p>{!! $section->tutorial->content !!}</p>
 
 @endsection
