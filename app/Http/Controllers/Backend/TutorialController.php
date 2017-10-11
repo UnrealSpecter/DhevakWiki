@@ -9,6 +9,7 @@ use Session;
 use App\Category;
 use App\Page;
 use App\Tutorial;
+use Purifier;
 
 class TutorialController extends Controller
 {
@@ -46,7 +47,7 @@ class TutorialController extends Controller
 
       $tutorial = new Tutorial;
 
-      $tutorial->content = $request->input('content');
+      $tutorial->content = Purifier::clean($request->input('content'));
       $tutorial->section_id = $sectionId;
       $tutorial->save();
 
@@ -94,7 +95,7 @@ class TutorialController extends Controller
       $section = Section::find($sectionId);
       $tutorial = Tutorial::findOrFail($id);
 
-      $tutorial->content = $request->input('content');
+      $tutorial->content = Purifier::clean($request->input('content'));
       $tutorial->section_id = $sectionId;
       $tutorial->save();
       return redirect('admin/pages');
