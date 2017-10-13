@@ -8,7 +8,7 @@
 
 @section('style')
   <link rel="stylesheet" href="{{ asset('css/tutorial/editTutorial.css') }}">
-  <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/4.6.6/tinymce.min.js"></script>
 
   <script>
   var editor_config = {
@@ -23,7 +23,7 @@
             text: 'zet stap',
             icon: false,
             onclick: function () {
-          editor.insertContent('<b>stap</b>&nbsp;');
+          editor.insertContent('<h1><b>stap</b></h1>&nbsp;');
         }
       });
     },
@@ -54,10 +54,11 @@
 @endsection
 
 @section('content')
-
+<br>
+<div class="container">
 {!! Form::model($section->tutorial, ['method' => 'PATCH', 'url' => ['/admin/pages', $page->id, 'sections', $section->id, 'tutorial'], 'class' => 'form-horizontal', 'files' => true,  'enctype' => 'multipart/form-data' ]) !!}
   {{ Form::textarea('content', null, ['class' => 'form-control']) }}
   {!! Form::submit(isset($submitButtonText) ? $submitButtonText : 'Creër', ['class' => 'btn btn-primary']) !!}
 {!! Form::close() !!}
-
+</div>
 @endsection

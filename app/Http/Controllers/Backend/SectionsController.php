@@ -61,7 +61,7 @@ class SectionsController extends Controller
         $section->name = $request->name;
         $section->page_id = $id;
         $section->save();
-        return redirect()->back();
+        return redirect('admin/pages');
     }
 
     /**
