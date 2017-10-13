@@ -14,10 +14,19 @@
   var editor_config = {
   path_absolute : "{{ URL::to('/') }}/",
         selector: 'textarea',
-        plugins: 'link image imagetools codesample advlist autolink lists charmap print preview hr anchor pagebreak searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking save table contextmenu directionality emoticons template paste textcolor colorpicker textpattern',
-        toolbar: "formatselect | bold italic strikethrough forecolor backcolor | image media link codesample | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent  | removeformat",
+        plugins: 'link image imagetools codesample advlist autolink lists charmap print preview hr anchor pagebreak searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking save table contextmenu directionality emoticons template paste textcolor colorpicker textpattern fullscreen',
+        toolbar: "formatselect | bold italic strikethrough forecolor backcolor | image media link codesample | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent  | removeformat stappen | fullscreen ",
         menubar: false,
         branding: false,
+        setup: function (editor) {
+          editor.addButton('stappen', {
+            text: 'zet stap',
+            icon: false,
+            onclick: function () {
+          editor.insertContent('<b>stap</b>&nbsp;');
+        }
+      });
+    },
         file_browser_callback : function(field_name, url, type, win) {
       var x = window.innerWidth || document.documentElement.clientWidth || document.getElementsByTagName('body')[0].clientWidth;
       var y = window.innerHeight|| document.documentElement.clientHeight|| document.getElementsByTagName('body')[0].clientHeight;
